@@ -1,0 +1,20 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% extends 'navbar.html' %}
+    {% block name %}
+    <form  action="{% url 'login' %}" method="get">
+      {% csrf_token %}
+      UserName :<input type="text" name="email" value=""><br><br>
+      Password :<input type="password" name="password" value=""><br><br>
+      <input type="submit" name="" value="Login">
+    </form>
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,27 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% extends 'navbar.html' %}
+    {% block name %}
+    <h1>Registration</h1>
+    <form action="{% url 'register' %}" method="post">
+      {% csrf_token %}
+      Name :<input type="text" name="name" value=""><br>
+      Email :<input type="text" name="email" value=""><br>
+      Password :<input type="password" name="password" value=""><br>
+      <input type="submit" name="" value="Register">
+    </form>
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endblock %}
+  </body>
+</html>
